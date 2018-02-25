@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <time.h>
+
+
+int main()
+{
+    clock_t tiempo_inicio, tiempo_final;
+
+    double segundos;
+
+    tiempo_inicio = clock();
+  int i, t, c, d, k, tamano, sum = 0;
+  t = 300;
+  for(i = 0; i < t; i++){
+     tamano = i;
+  int first[tamano][tamano], second[tamano][tamano], multiply[tamano][tamano];
+  for (c = 0; c < tamano; c++){
+    for (d = 0; d < tamano; d++){
+      first[c][d] = (rand()%2)+1;
+     second[c][d] = (rand()%2)+1;
+    }
+  }
+
+
+    for (c = 0; c < tamano; c++) {
+      for (d = 0; d < tamano; d++) {
+        for (k = 0; k < tamano; k++) {
+          sum = sum + first[c][k]*second[k][d];
+        }
+
+        multiply[c][d] = sum;
+        sum = 0;
+      }
+    }
+
+
+tiempo_final = clock();
+
+segundos = (double)(tiempo_final-tiempo_inicio) / CLOCKS_PER_SEC;
+printf("%\i. ",i);
+printf("%f",segundos);
+      printf("\n");
+  }
+  return 0;
+
+
+}
