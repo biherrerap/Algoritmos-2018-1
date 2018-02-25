@@ -1,0 +1,50 @@
+import java.util.Random;
+import java.security.SecureRandom;
+
+public class matrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		  double TInicio, TFin, tiempo;
+		  TInicio = System.currentTimeMillis();
+
+	
+	  int i, t, c, d, k, tamano, sum= 0;
+	  t = 300;
+	  for(i = 0; i < t; i++){
+	    tamano = i;
+	  int first[][] = new int [tamano][tamano];	
+	  int second[][] = new int [tamano][tamano];
+	  int multiply[][] = new int [tamano][tamano];
+	  
+	  for (c = 0; c < tamano; c++){
+	    for (d = 0; d < tamano; d++){
+	      first[c][d] = 1;
+	     second[c][d] = 2;	   
+	    }
+	  }
+
+ 
+	    for (c = 0; c < tamano; c++) {
+	      for (d = 0; d < tamano; d++) {
+	        for (k = 0; k < tamano; k++) {
+	          sum = sum + first[c][k]*second[k][d];
+	        }
+
+	        multiply[c][d] = sum;
+	        sum = 0;
+	      }
+	    }
+
+
+	TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+	tiempo = (TFin - TInicio)/1000; //Calculamos los milisegundos de diferencia
+	System.out.println(i + ". " + tiempo);
+	System.out.println("\t");
+	  }
+	  
+	}
+
+	    
+}
