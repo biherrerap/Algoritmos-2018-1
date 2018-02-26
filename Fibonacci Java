@@ -1,0 +1,20 @@
+public class Fibonacci { 
+	
+public static long fib(int n) { 
+if (n <= 1) return n; 
+else return fib(n-1) + fib(n-2); 
+} 
+
+public static void main(String[] args) { 
+int N = 100; 
+double TInicio, TFin, tiempo;
+TInicio = System.currentTimeMillis();
+for (int i = 1; i <= N; i++) {
+TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+tiempo = (TFin - TInicio)/1000; //Calculamos los milisegundos de diferencia
+fib(i);
+System.out.println(i + ": " +tiempo); 
+} 
+
+}
+}
